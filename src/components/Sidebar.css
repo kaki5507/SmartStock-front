@@ -1,0 +1,4 @@
+/* Sidebar.css */
+.MuiDrawer-root {
+  width: 240px; /* 사이드바 폭 */
+}
