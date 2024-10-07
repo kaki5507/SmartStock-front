@@ -1,12 +1,11 @@
-// Home.js 예시
 import React from 'react';
-import './Home.css';
+import './Home.css'; // Home.css 파일 임포트
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="home-container">
       <h1>홈</h1>
-      <p>재고 관리 시스템에 오신 것을 환영합니다!</p>
+      <p>여기에 홈 페이지 내용을 추가하세요.</p>
     </div>
   );
 };

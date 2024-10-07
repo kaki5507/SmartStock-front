@@ -1,11 +1,11 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import './ProductForm.css';
+import './ProductForm.css'; // ProductForm.css 파일 임포트
 
 const ProductForm = () => {
   return (
-    <div className="container">
-      <Typography variant="h4">상품 등록 페이지</Typography>
+    <div className="product-form-container">
+      <h1>상품 등록</h1>
+      <p>여기에 상품 등록 페이지 내용을 추가하세요.</p>
     </div>
   );
 };

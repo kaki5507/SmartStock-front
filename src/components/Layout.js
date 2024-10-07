@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import Sidebar from './Sidebar'; // 사이드바 컴포넌트
+import Sidebar from './Sidebar';
+import UserSettings from './UserSettings';
+import { Outlet } from 'react-router-dom';
+import './Layout.css'; // 필요한 CSS 파일을 가져옵니다.
 
 const Layout = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isUserSettingsOpen, setIsUserSettingsOpen] = useState(false);
 
-  const handleToggleSidebar = (isOpen) => {
-    setIsSidebarOpen(isOpen);
+  const toggleUserSettings = () => {
+    setIsUserSettingsOpen(!isUserSettingsOpen);
   };
 
   return (
-    <div>
-      <Header onToggleSidebar={handleToggleSidebar} />
-      <Sidebar isOpen={isSidebarOpen} onToggleSidebar={handleToggleSidebar} />
-      {/* 다른 컨텐츠는 여기 들어갑니다. */}
+    <div className="layout">
+      <Header  onToggleUserSettings={toggleUserSettings} />
+      <UserSettings isOpen={isUserSettingsOpen} onClose={toggleUserSettings} />
+      <div className="content">
+        <Sidebar />
+        <div className="main-content">
+          <Outlet /> {/* 여기에 페이지 내용이 들어갑니다 */}
+        </div>
+      </div>
     </div>
   );
 };

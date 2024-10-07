@@ -1,11 +1,11 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import './InventoryManager.css';
+import './InventoryManager.css'; // InventoryManager.css 파일 임포트
 
 const InventoryManager = () => {
   return (
-    <div className="container">
-      <Typography variant="h4">재고 관리 페이지</Typography>
+    <div className="inventory-manager-container">
+      <h1>재고 관리</h1>
+      <p>여기에 재고 관리 페이지 내용을 추가하세요.</p>
     </div>
   );
 };

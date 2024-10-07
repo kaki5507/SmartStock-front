@@ -1,51 +1,31 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  color: #333;
-  text-align: center;
-  margin-top: 20px;
-}
-
-table {
-  width: 80%;
-  margin: 20px auto;
-  border-collapse: collapse;
-}
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
-
-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-form {
+.layout {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
 }
 
-input {
-  margin: 10px 0;
-  padding: 8px;
-  width: 200px;
+.sidebar {
+  width: 240px; /* 고정 사이드바 너비 */
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  transition: background-color 0.3s;
+}
+
+.dim {
+  background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+}
+
+.user-settings {
+  position: fixed; /* 화면 고정 */
+  top: 0;
+  left: 0;
+  width: 300px; /* 사용자 설정 사이드바 너비 */
+  height: 100%; /* 화면 전체 높이 */
+  background-color: white;
+  z-index: 1000; /* 가장 위에 보이도록 */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }

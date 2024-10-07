@@ -2,26 +2,35 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Home from './pages/Home'; // Home 컴포넌트 추가
+import UserSettings from './components/UserSettings';
+import Home from './pages/Home';
 import InventoryManager from './pages/InventoryManager';
-import ProductForm from './pages/ProductForm'; // ProductPage 컴포넌트 추가
+import ProductForm from './pages/ProductForm';
+import './App.css';
 
 const App = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isUserSettingsOpen, setIsUserSettingsOpen] = useState(false);
 
-  const toggleSidebar = (isOpen) => {
-    setIsSidebarOpen(isOpen);
+  const toggleUserSettings = () => {
+    setIsUserSettingsOpen(!isUserSettingsOpen);
   };
 
   return (
     <Router>
-      <Header toggleSidebar={() => toggleSidebar(!isSidebarOpen)} />
-      <Sidebar isOpen={isSidebarOpen} onToggleSidebar={toggleSidebar} />
-      <Routes>
-        <Route path="/" element={<Home />} /> {/* Home 컴포넌트 사용 */}
-        <Route path="/inventory-manager" element={<InventoryManager />} />
-        <Route path="/product-page" element={<ProductForm />} />
-      </Routes>
+      <Header onToggleUserSettings={toggleUserSettings} />
+      <div className="layout">
+        <Sidebar />
+        <div className={`content ${isUserSettingsOpen ? 'dim' : ''}`}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/inventory-manager" element={<InventoryManager />} />
+            <Route path="/product-page" element={<ProductForm />} />
+          </Routes>
+        </div>
+      </div>
+      {isUserSettingsOpen && (
+        <UserSettings onClose={toggleUserSettings} />
+      )}
     </Router>
   );
 };

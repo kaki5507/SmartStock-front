@@ -1,14 +1,3 @@
-/* InventoryManager.css */
 .inventory-manager-container {
   padding: 20px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-/* Home.css, InventoryManager.css, ProductForm.css에 추가 */
-.container {
-  padding: 20px;
-  margin-top: 64px; /* Header 높이만큼 여백 추가 */
-}
-

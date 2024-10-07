@@ -1,22 +1,18 @@
 import React from 'react';
-import { Drawer, List, ListItem, ListItemText } from '@mui/material';
-import { Link } from 'react-router-dom';
+import './Sidebar.css';
 
-const Sidebar = ({ isOpen, onToggleSidebar }) => {
+const Sidebar = () => {
   return (
-    <Drawer anchor="left" open={isOpen} onClose={() => onToggleSidebar(false)}>
-      <List>
-        <ListItem button component={Link} to="/" onClick={() => onToggleSidebar(false)}>
-          <ListItemText primary="홈" />
-        </ListItem>
-        <ListItem button component={Link} to="/inventory-manager" onClick={() => onToggleSidebar(false)}>
-          <ListItemText primary="재고 관리" />
-        </ListItem>
-        <ListItem button component={Link} to="/product-page" onClick={() => onToggleSidebar(false)}>
-          <ListItemText primary="상품 페이지" />
-        </ListItem>
-      </List>
-    </Drawer>
+    <div className="sidebar">
+      <h3>전체 메뉴</h3>
+      <ul>
+        <li>재고 관리</li>
+        <li>주문 관리</li>
+        <li>상품 관리</li>
+        <li>리포트</li>
+        {/* 추가 메뉴 항목들 */}
+      </ul>
+    </div>
   );
 };
 
