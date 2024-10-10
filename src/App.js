@@ -1,36 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import UserSettings from './components/UserSettings';
+import Layout from './components/Layout';  // Layout을 가져옵니다.
 import Home from './pages/Home';
 import InventoryManager from './pages/InventoryManager';
 import ProductForm from './pages/ProductForm';
-import './App.css';
+import './App.css';  // App.css를 가져옵니다.
 
 const App = () => {
-  const [isUserSettingsOpen, setIsUserSettingsOpen] = useState(false);
-
-  const toggleUserSettings = () => {
-    setIsUserSettingsOpen(!isUserSettingsOpen);
-  };
-
   return (
     <Router>
-      <Header onToggleUserSettings={toggleUserSettings} />
-      <div className="layout">
-        <Sidebar />
-        <div className={`content ${isUserSettingsOpen ? 'dim' : ''}`}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/inventory-manager" element={<InventoryManager />} />
-            <Route path="/product-page" element={<ProductForm />} />
-          </Routes>
-        </div>
-      </div>
-      {isUserSettingsOpen && (
-        <UserSettings onClose={toggleUserSettings} />
-      )}
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/inventory-manager" element={<InventoryManager />} />
+          <Route path="/product-page" element={<ProductForm />} />
+        </Route>
+      </Routes>
     </Router>
   );
 };

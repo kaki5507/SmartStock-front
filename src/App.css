@@ -17,15 +17,3 @@
 .dim {
   background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
 }
-
-.user-settings {
-  position: fixed; /* 화면 고정 */
-  top: 0;
-  left: 0;
-  width: 300px; /* 사용자 설정 사이드바 너비 */
-  height: 100%; /* 화면 전체 높이 */
-  background-color: white;
-  z-index: 1000; /* 가장 위에 보이도록 */
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-}

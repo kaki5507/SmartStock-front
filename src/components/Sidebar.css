@@ -1,7 +1,6 @@
 .sidebar {
   width: 200px;
   background-color: #f4f4f4;
-  position: fixed;
   top: 60px; /* Header 높이 */
   bottom: 0;
   left: 0;

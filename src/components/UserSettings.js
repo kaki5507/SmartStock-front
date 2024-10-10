@@ -2,8 +2,13 @@ import React from 'react';
 import './UserSettings.css';
 
 const UserSettings = ({ onClose }) => {
+  // 내부 클릭 시 배경 클릭 이벤트 전파 차단
+  const handleClickInside = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="user-settings">
+    <div className="user-settings" onClick={handleClickInside}>
       <div className="user-settings-header">
         <h3>사용자 설정</h3>
         <button className="close-button" onClick={onClose}>닫기</button>

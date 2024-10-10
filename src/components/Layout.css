@@ -1,13 +1,33 @@
+/* 전체 레이아웃 설정 */
 .layout {
-  display: flex;
+display: flex;
+flex-direction: column; /* Header 위에 오도록 */
+height: 100vh;
 }
 
-.main-content {
-  flex-grow: 1; /* 메인 콘텐츠가 가능한 공간을 모두 차지 */
-  transition: margin-left 0.3s; /* 부드러운 전환 효과 */
-  margin-left: 0; /* 사이드바가 닫혔을 때의 기본 값 */
+
+/* 사이드바 및 컨텐츠 부분은 Header 아래로 이동 */
+.main-content-wrapper {
+display: flex;
+flex-grow: 1;
+padding-top: 60px; /* Header 높이만큼 아래로 배치 */
 }
 
-.sidebar-open .main-content {
-  margin-left: 240px; /* 사이드바가 열렸을 때의 마진 */
+/* Content는 Sidebar 옆에 위치 */
+.content {
+flex-grow: 1;
+padding: 20px;
+padding-top: 20px; /* Header 아래로 추가 공간 */
+background-color: #fafafa;
+}
+
+/* 어두운 배경 - UserSettings 열릴 때 */
+.dim-background {
+background-color: rgba(0, 0, 0, 0.5);
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+z-index: 100; /* UserSettings보다 아래 */
 }
