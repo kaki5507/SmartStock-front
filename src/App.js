@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';  // Layout을 가져옵니다.
 import Home from './pages/Home';
 import InventoryManager from './pages/InventoryManager';
-import ProductForm from './pages/ProductForm';
+import OrderView from './pages/OrderView';
+import Report from './pages/Report';
 import './App.css';  // App.css를 가져옵니다.
 
 const App = () => {
@@ -11,9 +12,10 @@ const App = () => {
     <Router>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/inventory-manager" element={<InventoryManager />} />
-          <Route path="/product-page" element={<ProductForm />} />
+          <Route path="/order-view" element={<OrderView />} />
+          <Route path="/report-stock" element={<Report />} />
         </Route>
       </Routes>
     </Router>

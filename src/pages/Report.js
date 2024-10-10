@@ -1,7 +1,7 @@
 import React from 'react';
-import './ProductForm.css'; // ProductForm.css 파일 임포트
+import './Report.css'; // OrderView.css 파일 임포트
 
-const ProductForm = () => {
+const Report = () => {
   return (
     <div className="product-form-container">
       <h1>상품 등록</h1>
@@ -10,4 +10,4 @@ const ProductForm = () => {
   );
 };
 
-export default ProductForm;
+export default Report;
